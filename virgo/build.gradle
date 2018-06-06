@@ -50,7 +50,7 @@ configure(virgoProjects) {
         tag = '3.7.2.RELEASE'
 
         createLocalCopy = System.properties['dockerizor.createLocalCopy'] ?: false
-        removeAdminConsole = System.properties['dockerizor.removeAdminConsole'] ?: true
-        removeSplash = System.properties['dockerizor.removeSplash'] ?: true
+        removeAdminConsole = System.properties['dockerizor.removeAdminConsole'] ?: false
+        removeSplash = System.properties['dockerizor.removeSplash'] ?: false
     }
 }
