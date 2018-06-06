@@ -1,7 +1,6 @@
 ext.virgoProjects = [
     project(':vts'),
-    project(':vjs'),
-    project(':vrs')
+    project(':vjs')
 ]
 
 buildscript {
@@ -36,8 +35,6 @@ configure(virgoProjects) {
             targetCompatibility = '1.7'
         }
     }
-
-    ext { rapVersion = '2.3.0' }
 
     repositories {
         mavenLocal()

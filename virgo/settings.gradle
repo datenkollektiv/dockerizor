@@ -2,4 +2,3 @@ rootProject.name = 'eclipsesource'
 
 include 'vts'
 include 'vjs'
-include 'vrs'

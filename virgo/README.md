@@ -10,7 +10,7 @@ Please note: The following step acts on the assumption that you have a Docker da
 $ ./gradlew build dockerize
 ```
 
-This will create the Docker images ``eclipsesource/virgo-tomcat-server``, ``eclipsesource/virgo-jetty-server`` and ``eclipsesource/virgo-rap-server``.
+This will create Docker images for `virgo-tomcat-server` and `virgo-jetty-server`.
 
 ### Running the Container
 
