@@ -1,5 +1,3 @@
-import com.eclipsesource.dockerizor.DockerizorTask
-
 apply plugin: 'base'
 apply plugin: 'com.eclipsesource.dockerizor'
 
