@@ -24,7 +24,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath "gradle.plugin.com.eclipsesource.dockerizor:dockerizor:0.8.3"
+    classpath "gradle.plugin.com.eclipsesource.dockerizor:dockerizor:0.8.4"
   }
 }
 
@@ -52,19 +52,19 @@ dockerizor {
 
 ```groovy
 dockerizor {
-  virgoFlavour = 'VJS'
+  virgoFlavour = 'VTS'
   removeAdminConsole = true
   removeSplash = true
 
-  imageName = 'virgo-jetty-server'
+  imageName = 'virgo-tomcat-server'
 }
 ```
 
-The snippet above creates a Docker image named 'virgo-jetty-server' with the Virgo flavor VJS (Virgo Jetty Server).
+The snippet above creates a Docker image named 'virgo-tomcat-server' with the Virgo flavor VTS (Virgo Server for Apache Tomcat).
 
 ```bash
-$ docker images | grep virgo-jetty-server
-eclipsesource/virgo-jetty-server   3.7.1.RELEASE       f8bbcc226483        About a minute ago       161 MB
+$ docker images | grep virgo-tomcat-server
+eclipsesource/virgo-tomcat-server   3.7.2               1725607bf234        6 hours ago         170MB
 ```
 
 The generated basic images for Virgo are available via [Docker Hub][dockerhub]:
