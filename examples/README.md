@@ -9,7 +9,7 @@ The code is based on the DS example from the [OSGi - JAX-RS Connector][jax-rs-co
 Please note: The following step acts on the assumption that you have a Docker daemon running locally.
 
 ```bash
-$ ./gradlew build dockerize
+$ ./gradlew build jax-rs-image:dockerize
 ```
 
 This will create the Docker image `dockerizor-example/jax-rs`.
