@@ -16,7 +16,7 @@ In a first step we automated the generation of basic Virgo images.
 
 The following build snippet applies the [Gradle Plugin Dockerizor][dockerizor] to your build script:
 
-```
+```groovy
 buildscript {
   repositories {
     maven {
@@ -62,7 +62,7 @@ dockerizor {
 
 The snippet above creates a Docker image named 'virgo-jetty-server' with the Virgo flavor VJS (Virgo Jetty Server).
 
-```sh
+```bash
 $ docker images | grep virgo-jetty-server
 eclipsesource/virgo-jetty-server   3.7.1.RELEASE       f8bbcc226483        About a minute ago       161 MB
 ```
