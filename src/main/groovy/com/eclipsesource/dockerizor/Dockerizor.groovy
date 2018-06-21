@@ -53,10 +53,8 @@ class Dockerizor implements Plugin<Project> {
                 LABEL ("Description=\"${project.dockerizor.description}\"")
 
                 logger.info "Installing Virgo runtime (${project.dockerizor.virgoFlavour}) version ${project.dockerizor.virgoVersion}..."
-                RUN ("apk update")
-                RUN ("apk add curl libarchive-tools")
                 // startup.sh uses /bin/bash
-                RUN ("apk add bash")
+                RUN ("apk add --update curl libarchive-tools bash")
                 // create a system user without home directory
                 RUN ("adduser -S -H virgo")
 
