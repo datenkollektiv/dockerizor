@@ -16,8 +16,8 @@ class DockerizorExtension {
 
     String javaImage
     String virgoVersion
-    String hudsonJobName
-    String hudsonJobNumber
+    String ciJobName
+    String ciJobNumber
     String virgoFlavour
     String virgoHome
     String hostname
@@ -86,10 +86,10 @@ class DockerizorExtension {
                 switch (virgoVersion) {
                     case 'latest':
                     case ~/.*D-\d{14}/: 
-                        if(!hudsonJobNumber) {
-                            hudsonJobNumber='lastSuccessfulBuild'
+                        if(!ciJobNumber) {
+                            ciJobNumber='lastSuccessfulBuild'
                         }
-                        return "https://hudson.eclipse.org/virgo/job/${hudsonJobName}/${hudsonJobNumber}/artifact/packaging/${shortName}/build/distributions/${archiveName}.zip"
+                        return "https://ci.eclipse.org/virgo/job/${ciJobName}/${ciJobNumber}/artifact/packaging/${shortName}/build/distributions/${archiveName}.zip"
                     case ~/.*M\d{2}/:
                     return "http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/${virgoFlavour}/${archiveName}.zip&mirror_id=580&r=1"
                     default:
@@ -98,7 +98,7 @@ class DockerizorExtension {
             case 'VRS':
                 switch (virgoVersion) {
                     case 'latest':
-                    return "https://hudson.eclipse.org/virgo/job/${hudsonJobName}/lastSuccessfulBuild/artifact/packaging/${shortName}/build/distributions/${archiveName}.zip"
+                    return "https://ci.eclipse.org/virgo/job/${ciJobName}/lastSuccessfulBuild/artifact/packaging/${shortName}/build/distributions/${archiveName}.zip"
                     default:
                     throw new IllegalArgumentException("Virgo flavour ${virgoFlavour}/${virgoVersion} *not* supported")
                 }
@@ -107,4 +107,3 @@ class DockerizorExtension {
         }
     }
 }
-

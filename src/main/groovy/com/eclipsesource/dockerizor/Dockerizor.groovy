@@ -23,7 +23,7 @@ class Dockerizor implements Plugin<Project> {
 
             javaImage = 'openjdk:8u151-jre-alpine'
             virgoVersion = '3.7.2.RELEASE'
-            hudsonJobName = 'virgo-release'
+            ciJobName = 'virgo-release'
             virgoFlavour = 'VTS'
             virgoHome = '/home/virgo'
             removeAdminConsole = true

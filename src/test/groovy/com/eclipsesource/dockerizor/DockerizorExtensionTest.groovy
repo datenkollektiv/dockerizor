@@ -97,7 +97,7 @@ class DockerizorExtensionTest {
         DockerizorExtension uut = new DockerizorExtension (
                 virgoVersion:'latest',
                 virgoFlavour:'VTS',
-                hudsonJobName:'gradle-build'
+                ciJobName:'gradle-build'
                 )
 
         println "Resulting download URL ==> ${uut.downloadUrl}"
@@ -114,8 +114,8 @@ class DockerizorExtensionTest {
         DockerizorExtension uut = new DockerizorExtension (
                 virgoVersion:'3.7.0.D-20161218094003',
                 virgoFlavour:'VTS',
-                hudsonJobName:'gradle-build',
-                hudsonJobNumber:'782'
+                ciJobName:'gradle-build',
+                ciJobNumber:'782'
                 )
 
         println "Resulting download URL ==> ${uut.downloadUrl}"
@@ -132,8 +132,8 @@ class DockerizorExtensionTest {
         DockerizorExtension uut = new DockerizorExtension (
                 virgoVersion:'latest',
                 virgoFlavour:'VTS',
-                hudsonJobName:'gradle-build',
-                hudsonJobNumber:'782'
+                ciJobName:'gradle-build',
+                ciJobNumber:'782'
                 )
 
         println "Resulting download URL ==> ${uut.downloadUrl}"
@@ -150,7 +150,7 @@ class DockerizorExtensionTest {
         DockerizorExtension uut = new DockerizorExtension (
                 virgoVersion:'3.7.0.D-20161218094003',
                 virgoFlavour:'VTS',
-                hudsonJobName:'gradle-build'
+                ciJobName:'gradle-build'
                 )
 
         println "Resulting download URL ==> ${uut.downloadUrl}"
