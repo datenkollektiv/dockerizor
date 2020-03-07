@@ -14,7 +14,7 @@ buildscript {
 }
 
 plugins {
-    id "com.eclipsesource.dockerizor" version "0.9.1"
+    id "com.eclipsesource.dockerizor" version "0.9.1" apply false
 }
 
 ext.virgoProjects = [
