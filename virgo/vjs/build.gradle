@@ -1,6 +1,6 @@
 dockerizor {
     description = 'Virgo Jetty Server'
-    repository = "eclipsesource/virgo-jetty-server"
+    repository = "datenkollektiv/virgo-jetty-server"
     
 	virgoFlavour = 'VJS'
 }

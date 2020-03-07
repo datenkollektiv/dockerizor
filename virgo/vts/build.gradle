@@ -1,6 +1,6 @@
 dockerizor {
     description = 'Virgo Server for Apache Tomcat'
-    repository = "eclipsesource/virgo-tomcat-server"
+    repository = "datenkollektiv/virgo-tomcat-server"
 
 	virgoFlavour = 'VTS'
 }

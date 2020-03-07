@@ -1,4 +1,4 @@
-rootProject.name = 'eclipsesource'
+rootProject.name = 'datenkollektiv'
 
 include 'vts'
 include 'vjs'

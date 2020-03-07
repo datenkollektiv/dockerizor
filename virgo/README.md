@@ -17,7 +17,7 @@ This will create Docker images for `virgo-tomcat-server` and `virgo-jetty-server
 To start one of the previously dockerized Virgo runtimes:
 
 ```bash
-$ docker run -it --rm --name="virgo-tomcat-server" --publish=8080:8080 -t eclipsesource/virgo-tomcat-server:3.7.2
+$ docker run -it --rm --name="virgo-tomcat-server" --publish=8080:8080 -t datenkollektiv/virgo-tomcat-server:3.7.2
 ```
 
 The command runs the `virgo-tomcat-server` in interactive mode and publishes the ports `8080`.
