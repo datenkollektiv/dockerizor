@@ -23,25 +23,7 @@ ext.virgoProjects = [
 ]
 
 configure(virgoProjects) {
-    apply plugin: 'java'
-    apply plugin: 'eclipse'
-
-    compileJava {
-        sourceCompatibility = '1.7'
-        targetCompatibility = '1.7'
-    }
-
-    eclipse {
-        jdt {
-            sourceCompatibility = '1.7'
-            targetCompatibility = '1.7'
-        }
-    }
-
-    repositories {
-        mavenLocal()
-        mavenCentral()
-    }
+    apply plugin: 'base'
 }
 
 configure(virgoProjects) {
