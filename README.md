@@ -26,7 +26,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath "gradle.plugin.de.datenkollektiv.dockerizor:dockerizor:0.8.4"
+    classpath "gradle.plugin.de.datenkollektiv.dockerizor:dockerizor:0.9.2"
   }
 }
 
@@ -73,7 +73,7 @@ The generated basic images for Virgo are available via [Docker Hub][dockerhub]:
 
  * Virgo Server for Apache Tomcat: https://registry.hub.docker.com/u/datenkollektiv/virgo-tomcat-server/
  * Virgo Jetty Server: https://registry.hub.docker.com/u/datenkollektiv/virgo-jetty-server/
- * Virgo RAP Server: https://registry.hub.docker.com/u/datenkollektiv/virgo-rap-server/
+ * Virgo Kernel: https://registry.hub.docker.com/u/datenkollektiv/virgo-kernel/
 
 [Virgo]: http://www.eclipse.org/virgo/ "Virgo"
 [dockerhub]: https://hub.docker.com/ "Docker Hub"

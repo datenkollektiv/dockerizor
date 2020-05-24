@@ -1,24 +1,33 @@
 package com.eclipsesource.dockerizor
-import static org.junit.Assert.assertThat
 
 import static org.hamcrest.CoreMatchers.containsString
 import static org.hamcrest.CoreMatchers.endsWith
-import static org.junit.Assert.assertThat
+import static org.hamcrest.MatcherAssert.assertThat
 
-import org.junit.Ignore
 import org.junit.Test
 
 class DockerizorExtensionTest {
 
     @Test
-    void shouldSupportLatestVersionOfVirgoRapServer() {
+    void shouldSupportLatestVersionOfVirgoKernelServer() {
         DockerizorExtension uut = new DockerizorExtension (
                 virgoVersion:'latest',
-                virgoFlavour:'VRS'
+                virgoFlavour:'VK'
                 )
 
-        assertThat(uut.archiveName, containsString("virgo-nano-rap"))
+        assertThat(uut.archiveName, containsString("virgo-kernel"))
         assertThat(uut.archiveName, containsString("latest"))
+    }
+
+    @Test
+    void shouldSupportMilestoneDownloadOfVirgoJettyServer() {
+        DockerizorExtension uut = new DockerizorExtension (
+                virgoVersion:'3.7.0.M03',
+                virgoFlavour:'VJS'
+        )
+
+        assertThat(uut.downloadUrl, containsString("VJS"))
+        assertThat(uut.downloadUrl, containsString("milestone"))
     }
 
     @Test
@@ -33,14 +42,14 @@ class DockerizorExtensionTest {
     }
 
     @Test
-    void shouldSupportMilestoneDownloadOfVirgoJettyServer() {
+    void shouldSupport36ReleaseDownloadOfVirgoJettyServer() {
         DockerizorExtension uut = new DockerizorExtension (
-                virgoVersion:'3.7.0.M03',
+                virgoVersion:'3.6.4.RELEASE',
                 virgoFlavour:'VJS'
-                )
+        )
 
-        assertThat(uut.downloadUrl, containsString("VJS"))
-        assertThat(uut.downloadUrl, containsString("milestone"))
+        assertThat(uut.downloadUrl, containsString("VP"))
+        assertThat(uut.downloadUrl, containsString("release"))
     }
 
     @Test
@@ -55,37 +64,26 @@ class DockerizorExtensionTest {
     }
 
     @Test
-    void shouldSupport36ReleaseDownloadOfVirgoJettyServer() {
+    void shouldSupport37ReleaseDownloadOfVirgoJettyServer() {
         DockerizorExtension uut = new DockerizorExtension (
-                virgoVersion:'3.6.4.RELEASE',
+                virgoVersion:'3.7.3.RELEASE',
                 virgoFlavour:'VJS'
                 )
 
         assertThat(uut.downloadUrl, containsString("VP"))
+        assertThat(uut.downloadUrl, containsString("virgo-jetty-server"))
         assertThat(uut.downloadUrl, containsString("release"))
     }
 
     @Test
-    @Ignore
     void shouldSupport37ReleaseDownloadOfVirgoTomcatServer() {
         DockerizorExtension uut = new DockerizorExtension (
-                virgoVersion:'3.7.0.RELEASE',
+                virgoVersion:'3.7.3.RELEASE',
                 virgoFlavour:'VTS'
-                )
+        )
 
-        assertThat(uut.downloadUrl, containsString("VTS"))
-        assertThat(uut.downloadUrl, containsString("release"))
-    }
-
-    @Test
-    @Ignore
-    void shouldSupport37ReleaseDownloadOfVirgoJettyServer() {
-        DockerizorExtension uut = new DockerizorExtension (
-                virgoVersion:'3.7.0.RELEASE',
-                virgoFlavour:'VJS'
-                )
-
-        assertThat(uut.downloadUrl, containsString("VJS"))
+        assertThat(uut.downloadUrl, containsString("VP"))
+        assertThat(uut.downloadUrl, containsString("virgo-tomcat-server"))
         assertThat(uut.downloadUrl, containsString("release"))
     }
 

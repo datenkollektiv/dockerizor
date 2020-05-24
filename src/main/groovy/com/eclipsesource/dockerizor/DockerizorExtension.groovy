@@ -40,12 +40,12 @@ class DockerizorExtension {
 
     String getShortName() {
         switch (virgoFlavour) {
+            case 'VK':
+                return "kernel"
             case 'VJS':
                 return "jetty-server"
             case 'VTS':
                 return "tomcat-server"
-            case 'VRS':
-                return "nano"
             default:
                 throw new IllegalArgumentException("Virgo flavour ${virgoFlavour} *not* supported")
         }
@@ -53,6 +53,13 @@ class DockerizorExtension {
 
     String getArchiveName() {
         switch (virgoFlavour) {
+            case 'VK':
+                switch (virgoVersion) {
+                    case 'latest':
+                    return "virgo-kernel-latest"
+                    default:
+                    return "virgo-kernel-${virgoVersion}"
+                }
             case 'VJS':
                 switch (virgoVersion) {
                     case 'latest':
@@ -67,13 +74,6 @@ class DockerizorExtension {
                     default:
                     return "virgo-tomcat-server-${virgoVersion}"
                 }
-            case 'VRS':
-                switch (virgoVersion) {
-                    case 'latest':
-                    return "virgo-nano-rap-latest"
-                    default:
-                    throw new IllegalArgumentException("Virgo flavour ${virgoFlavour}/${virgoVersion} *not* supported")
-                }
             default:
                 throw new IllegalArgumentException("Virgo flavour ${virgoFlavour} *not* supported")
         }
@@ -81,6 +81,7 @@ class DockerizorExtension {
 
     String getDownloadUrl() {
         switch (virgoFlavour) {
+            case 'VK':
             case 'VJS':
             case 'VTS':
                 switch (virgoVersion) {
@@ -91,16 +92,9 @@ class DockerizorExtension {
                         }
                         return "https://ci.eclipse.org/virgo/job/${ciJobName}/${ciJobNumber}/artifact/packaging/${shortName}/build/distributions/${archiveName}.zip"
                     case ~/.*M\d{2}/:
-                    return "http://www.eclipse.org/downloads/download.php?file=/virgo/milestone/${virgoFlavour}/${archiveName}.zip&mirror_id=580&r=1"
+                    return "https://www.eclipse.org/downloads/download.php?file=/virgo/milestone/${virgoFlavour}/${archiveName}.zip&mirror_id=580&r=1"
                     default:
-                    return "http://www.eclipse.org/downloads/download.php?file=/virgo/release/VP/${virgoVersion}/${archiveName}.zip&mirror_id=580&r=1"
-                }
-            case 'VRS':
-                switch (virgoVersion) {
-                    case 'latest':
-                    return "https://ci.eclipse.org/virgo/job/${ciJobName}/lastSuccessfulBuild/artifact/packaging/${shortName}/build/distributions/${archiveName}.zip"
-                    default:
-                    throw new IllegalArgumentException("Virgo flavour ${virgoFlavour}/${virgoVersion} *not* supported")
+                    return "https://www.eclipse.org/downloads/download.php?file=/virgo/release/VP/${virgoVersion}/${archiveName}.zip&mirror_id=580&r=1"
                 }
             default:
                 throw new IllegalArgumentException("Virgo flavour ${virgoFlavour} *not* supported")

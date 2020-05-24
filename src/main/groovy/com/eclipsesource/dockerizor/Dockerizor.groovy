@@ -69,6 +69,7 @@ class Dockerizor implements Plugin<Project> {
 
                 if(project.dockerizor.removeAdminConsole) {
                     switch (project.dockerizor.virgoFlavour) {
+                        case 'VK':
                         case 'VJS':
                         case 'VTS':
                             RUN "rm ${virgoHome}/pickup/org.eclipse.virgo.management.console_*.jar"
@@ -80,6 +81,7 @@ class Dockerizor implements Plugin<Project> {
 
                 if (project.dockerizor.removeSplash) {
                     switch (project.dockerizor.virgoFlavour) {
+                        case 'VK':
                         case 'VJS':
                         case 'VTS':
                             RUN "rm -f ${virgoHome}/pickup/org.eclipse.virgo.apps.splash_*.jar"
@@ -95,6 +97,7 @@ class Dockerizor implements Plugin<Project> {
 
                 if (project.dockerizor.enableUserRegionOsgiConsole) {
                     switch (project.dockerizor.virgoFlavour) {
+                        case 'VK':
                         case 'VJS':
                         case 'VTS':
                             if(!project.dockerizor.hostname) {
@@ -113,9 +116,9 @@ class Dockerizor implements Plugin<Project> {
 
                 if (project.dockerizor.exposeHttpPort) {
                     switch (project.dockerizor.virgoFlavour) {
+                        case 'VK':
                         case 'VJS':
                         case 'VTS':
-                        case 'VRS':
                             EXPOSE 8080 // HTTP
                             EXPOSE 8443 // HTTPS
                             break
