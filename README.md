@@ -26,11 +26,11 @@ buildscript {
     }
   }
   dependencies {
-    classpath "gradle.plugin.com.eclipsesource.dockerizor:dockerizor:0.8.4"
+    classpath "gradle.plugin.de.datenkollektiv.dockerizor:dockerizor:0.8.4"
   }
 }
 
-apply plugin: "com.eclipsesource.dockerizor"
+apply plugin: "de.datenkollektiv.dockerizor"
 ```
 
 ### Building basic Virgo images
@@ -66,16 +66,16 @@ The snippet above creates a Docker image named 'virgo-tomcat-server' with the Vi
 
 ```bash
 $ docker images | grep virgo-tomcat-server
-eclipsesource/virgo-tomcat-server   3.7.2               1725607bf234        6 hours ago         170MB
+datenkollektiv/virgo-tomcat-server            3.7.3                 a95cb6faa18f        2 minutes ago       175MB
 ```
 
 The generated basic images for Virgo are available via [Docker Hub][dockerhub]:
 
- * Virgo Server for Apache Tomcat: https://registry.hub.docker.com/u/eclipsesource/virgo-tomcat-server/
- * Virgo Jetty Server: https://registry.hub.docker.com/u/eclipsesource/virgo-jetty-server/
- * Virgo RAP Server: https://registry.hub.docker.com/u/eclipsesource/virgo-rap-server/
+ * Virgo Server for Apache Tomcat: https://registry.hub.docker.com/u/datenkollektiv/virgo-tomcat-server/
+ * Virgo Jetty Server: https://registry.hub.docker.com/u/datenkollektiv/virgo-jetty-server/
+ * Virgo RAP Server: https://registry.hub.docker.com/u/datenkollektiv/virgo-rap-server/
 
 [Virgo]: http://www.eclipse.org/virgo/ "Virgo"
 [dockerhub]: https://hub.docker.com/ "Docker Hub"
 [gradle]: http://gradle.org/ "Gradle"
-[dockerizor]: https://plugins.gradle.org/plugin/com.eclipsesource.dockerizor "Gradle Plugin Dockerizor"
+[dockerizor]: https://plugins.gradle.org/plugin/de.datenkollektiv.dockerizor "Gradle Plugin Dockerizor"

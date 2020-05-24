@@ -1,4 +1,4 @@
-## How-To build dockerizor
+# How-To build dockerizor
 
 > Note: This is a fork from [eclipsesource/dockerizor](https://github.com/eclipsesource/dockerizor)
 
@@ -10,14 +10,19 @@ $ cd dockerizor
 $ ./gradlew build
 ```
 
-Publish the plugin to your local [Maven](https://maven.apache.org/) repository.
+## Publish the plugin to your local [Maven](https://maven.apache.org/) repository.
 
 ```bash
-$ ./gradlew clean build publishToMavenLocal
+./gradlew clean build publishToMavenLocal
 ```
 
-Publish the plugin to [Gradle Plugins](https://plugins.gradle.org/)
+## Publish the plugin to [Gradle Plugins](https://plugins.gradle.org/)
+
+Use the "Plugin Portal tasks":
+
+* `login` - Update the gradle.properties files so this machine can publish to the Gradle Plugin portal.
+* `publishPlugins` - Publishes this plugin to the Gradle Plugin portal.
 
 ```bash
-$ ./gradlew clean build publishPlugins
+./gradlew clean build publishPlugins
 ```

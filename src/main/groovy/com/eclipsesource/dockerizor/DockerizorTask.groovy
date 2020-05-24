@@ -20,16 +20,16 @@ class DockerizorTask extends DefaultTask {
     @OutputDirectory
     File outputDir
 
-    Dockerfile dockerfile = new Dockerfile()
+    private Dockerfile dockerfile = new Dockerfile()
 
-    boolean dryRun
-    boolean noCache
+    private boolean dryRun
+    private boolean noCache
 
-    boolean createLocalCopy
+    private boolean createLocalCopy
 
-    String uri
-    String repository
-    String tag
+    protected String uri
+    private String repository
+    private String tag
 
     DockerizorTask() {
         outputDir = new File(project.buildDir, "dockerizor")

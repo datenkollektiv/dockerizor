@@ -10,7 +10,7 @@ publishing {
 
 					appendNode('name', 'dockerizor')
 					appendNode('description', 'Gradle plugin to build und publish Docker images for Virgo powered applications.')
-					appendNode('url', 'https://github.com/eclipsesource/dockerizor')
+					appendNode('url', 'https://github.com/datenkollektiv/dockerizor')
 					appendNode('inceptionYear', '2014')
 
 					appendNode('licenses').appendNode('license').with {
@@ -19,22 +19,24 @@ publishing {
 						appendNode('distribution', 'repo')
 					}
 
-					appendNode('developers').appendNode('developer').with {
-						appendNode('id', 'fwaibel')
-						appendNode('name', 'Florian Waibel')
-						appendNode('email', 'fwaibel@eclipsesource.com')
-						appendNode('roles').appendNode('role', 'Developer')
+					appendNode('developers')with {
+						appendNode('developer').with {
+							appendNode('id', 'fwaibel')
+							appendNode('name', 'Florian Waibel')
+							appendNode('email', 'fwaibel@datenkollektiv.de')
+							appendNode('roles').appendNode('role', 'Developer')
+						}
 					}
 
 					appendNode('issueManagement').with {
 						appendNode('system', 'GitHub')
-						appendNode('url', 'https://github.com/eclipsesource/dockerizor/issues')
+						appendNode('url', 'https://github.com/datenkollektiv/dockerizor/issues')
 					}
 
 					appendNode('scm').with {
-						appendNode('connection', 'https://github.com/eclipsesource/dockerizor.git')
-						appendNode('developerConnection', 'git@github.com:eclipsesource/dockerizor.git')
-						appendNode('url', 'https://github.com/eclipsesource/dockerizor')
+						appendNode('connection', 'https://github.com/datenkollektiv/dockerizor.git')
+						appendNode('developerConnection', 'git@github.com:datenkollektiv/dockerizor.git')
+						appendNode('url', 'https://github.com/datenkollektiv/dockerizor')
 					}
 				}
 			}

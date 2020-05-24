@@ -6,9 +6,16 @@ buildscript {
     dependencies { classpath "com.gradle.publish:plugin-publish-plugin:0.9.7" }
 }
 
+// First, apply the publishing plugin
+plugins {
+    id "com.gradle.plugin-publish" version "0.11.0"
+    id "java-gradle-plugin"
+    // Apply other plugins here, e.g. the kotlin plugin for a plugin written in Kotlin
+    // or the groovy plugin if the plugin uses Groovy
+}
+
 apply plugin: 'groovy'
 apply plugin: 'maven'
-apply plugin: 'com.gradle.plugin-publish'
 apply plugin: 'eclipse'
 
 repositories {
@@ -26,18 +33,28 @@ dependencies {
     testCompile 'junit:junit:4.13'
 }
 
-group = 'com.eclipsesource.dockerizor'
+group = 'de.datenkollektiv.dockerizor'
 version = '0.9.2.BUILD-SNAPSHOT'
 
+// Use java-gradle-plugin to generate plugin descriptors and specify plugin ids
+gradlePlugin {
+    plugins {
+        dockerizorPlugin {
+            id = 'de.datenkollektiv.dockerizor'
+            implementationClass = 'com.eclipsesource.dockerizor.Dockerizor'
+        }
+    }
+}
+
 pluginBundle {
-    website = 'https://github.com/eclipsesource/dockerizor'
-    vcsUrl = 'https://github.com/eclipsesource/dockerizor'
+    website = 'https://github.com/datenkollektiv/dockerizor'
+    vcsUrl = 'https://github.com/datenkollektiv/dockerizor'
     description = 'Gradle plug-in to create a Docker image that includes an Eclipse Virgo container'
     tags = ['virgo', 'docker']
 
     plugins {
-        greetingsPlugin {
-            id = 'com.eclipsesource.dockerizor'
+        dockerizorPlugin {
+            // id is captured from java-gradle-plugin configuration
             displayName = 'Gradle dockerizor plugin'
         }
     }

@@ -22,7 +22,7 @@ class Dockerizor implements Plugin<Project> {
             createLocalCopy = false
 
             javaImage = 'openjdk:8u212-jre-alpine'
-            virgoVersion = '3.7.2.RELEASE'
+            virgoVersion = '3.7.3.RELEASE'
             ciJobName = 'virgo-release'
             virgoFlavour = 'VTS'
             virgoHome = '/home/virgo'

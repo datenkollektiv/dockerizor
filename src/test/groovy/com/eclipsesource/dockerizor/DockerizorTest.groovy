@@ -14,7 +14,7 @@ class DockerizorTest {
 	@Test
     void dockerizorShouldBeDockerizorExtension() {
 		Project project = ProjectBuilder.builder().build()
-		project.apply plugin: 'com.eclipsesource.dockerizor'
+		project.apply plugin: 'de.datenkollektiv.dockerizor'
 
 		assertTrue(project.dockerizor instanceof DockerizorExtension)
 	}
@@ -22,7 +22,7 @@ class DockerizorTest {
 	@Test
     void dockerizeShouldBeDockerTask() {
 		Project project = ProjectBuilder.builder().build()
-		project.apply plugin: 'com.eclipsesource.dockerizor'
+		project.apply plugin: 'de.datenkollektiv.dockerizor'
 
 		assertTrue(project.tasks.dockerize instanceof DockerizorTask)
 	}

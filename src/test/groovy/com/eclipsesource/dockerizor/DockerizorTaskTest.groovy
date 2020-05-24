@@ -19,7 +19,7 @@ class DockerizorTaskTest {
     @Before
     void setup() {
         project = ProjectBuilder.builder().build()
-        project.apply plugin: 'com.eclipsesource.dockerizor'
+        project.apply plugin: 'de.datenkollektiv.dockerizor'
         task = project.tasks['dockerize']
         project.dockerizor.dryRun = true
         dockerfile = new File(task.outputDir, "Dockerfile")
