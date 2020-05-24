@@ -1,7 +1,7 @@
-# Virgo Jetty Server
+# Virgo Kernel
 
-[![](https://images.microbadger.com/badges/image/datenkollektiv/virgo-jetty-server:3.7.3.svg)](https://microbadger.com/images/datenkollektiv/virgo-jetty-server:3.7.3)
-[![](https://images.microbadger.com/badges/version/datenkollektiv/virgo-jetty-server.svg)](https://microbadger.com/images/datenkollektiv/virgo-jetty-server)
+[![](https://images.microbadger.com/badges/image/datenkollektiv/virgo-kernel:3.7.3.svg)](https://microbadger.com/images/datenkollektiv/virgo-kernel:3.7.3)
+[![](https://images.microbadger.com/badges/version/datenkollektiv/virgo-kernel.svg)](https://microbadger.com/images/datenkollektiv/virgo-kernel)
 
 [Virgo][Virgo] from [EclipseRT][EclipseRT] is a completely module-based Java application server that is designed to run enterprise Java applications and Spring-powered applications with a high degree of flexibility and reliability. It offers a simple yet comprehensive platform to develop, deploy, and service enterprise Java applications.
 
@@ -11,7 +11,7 @@ To create an application based on this image you can simply drop your applicatio
 The following Dockerfile would add your application bundle to the Docker container:
 
 ```Dockerfile
-FROM datenkollektiv/virgo-jetty-server
+FROM datenkollektiv/virgo-kernel
 
 ADD my-app.jar /home/virgo/pickup/
 ```
@@ -27,7 +27,7 @@ docker build .
 The following command starts the Virgo Server for Apache Tomcat in a Docker container and exposes the port ``8080``.
 
 ```shell
-docker run -d --name="virgo-jetty-server" --publish=8080:8080 -t datenkollektiv/virgo-jetty-server:latest
+docker run -it --rm --name="virgo-kernel" --publish=8080:8080 -t datenkollektiv/virgo-kernel:latest
 ```
 
 ## Accessing your Web Application
@@ -36,16 +36,16 @@ The context path of the application is specified in the OSGi metadata of your ap
 
 ## Customize the Virgo Container
 
-The Virgo container is built with [Dockerizer][Dockerizor]:
+The Virgo container is built with [Dockerizor][Dockerizor]:
 
 ```groovy
 dockerizor {
-    virgoFlavour = 'VJS'
+    virgoFlavour = 'VK'
     removeAdminConsole = true
     removeSplash = true
 
     virgoVersion = 'latest'
-    imageName = 'virgo-jetty-server'
+    imageName = 'virgo-kernel'
 }
 ```
 

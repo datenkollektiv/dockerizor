@@ -1,4 +1,5 @@
 rootProject.name = 'datenkollektiv'
 
-include 'vts'
+include 'vk'
 include 'vjs'
+include 'vts'

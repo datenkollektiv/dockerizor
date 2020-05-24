@@ -1,0 +1,6 @@
+dockerizor {
+    description = 'Virgo Kernel'
+    repository = "datenkollektiv/virgo-kernel"
+
+    virgoFlavour = 'VK'
+}

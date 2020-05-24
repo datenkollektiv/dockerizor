@@ -8,18 +8,21 @@ buildscript {
     }
     dependencies {
         if (System.properties['use.local.dockerizor.snapshot'] == 'true') {
-            classpath 'com.eclipsesource.dockerizor:dockerizor:0.9.2.BUILD-SNAPSHOT'
+            classpath 'de.datenkollektiv.dockerizor:dockerizor:0.9.2.BUILD-SNAPSHOT'
         }
     }
 }
 
-plugins {
-    id "com.eclipsesource.dockerizor" version "0.9.1" apply false
+if (System.properties['use.local.dockerizor.snapshot'] != 'true') {
+    plugins {
+        id "de.datenkollektiv.dockerizor" version "0.9.2" apply false
+    }
 }
 
 ext.virgoProjects = [
-        project(':vts'),
-        project(':vjs')
+        project(':vk'),
+        project(':vjs'),
+        project(':vts')
 ]
 
 configure(virgoProjects) {
@@ -27,11 +30,11 @@ configure(virgoProjects) {
 }
 
 configure(virgoProjects) {
-    apply plugin: 'com.eclipsesource.dockerizor'
+    apply plugin: 'de.datenkollektiv.dockerizor'
 
     dockerizor {
         maintainer = 'Florian Waibel <fwaibel@datenkollektiv.de>'
-        tag = '3.7.2'
+        tag = '3.7.3'
 
         createLocalCopy = System.properties['dockerizor.createLocalCopy'] ?: false
         removeAdminConsole = System.properties['dockerizor.removeAdminConsole'] ?: false
