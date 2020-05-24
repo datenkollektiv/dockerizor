@@ -71,9 +71,9 @@ datenkollektiv/virgo-tomcat-server            3.7.3                 a95cb6faa18f
 
 The generated basic images for Virgo are available via [Docker Hub][dockerhub]:
 
- * Virgo Server for Apache Tomcat: https://registry.hub.docker.com/u/datenkollektiv/virgo-tomcat-server/
- * Virgo Jetty Server: https://registry.hub.docker.com/u/datenkollektiv/virgo-jetty-server/
- * Virgo Kernel: https://registry.hub.docker.com/u/datenkollektiv/virgo-kernel/
+ * Virgo Server for Apache Tomcat: https://registry.hub.docker.com/r/datenkollektiv/virgo-tomcat-server/
+ * Virgo Jetty Server: https://registry.hub.docker.com/r/datenkollektiv/virgo-jetty-server/
+ * Virgo Kernel: https://registry.hub.docker.com/r/datenkollektiv/virgo-kernel/
 
 [Virgo]: http://www.eclipse.org/virgo/ "Virgo"
 [dockerhub]: https://hub.docker.com/ "Docker Hub"
