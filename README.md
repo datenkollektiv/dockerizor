@@ -1,9 +1,11 @@
-[![Build Status](https://travis-ci.org/eclipsesource/dockerizor.svg)](https://travis-ci.org/eclipsesource/dockerizor)
+[![Last Commit](https://img.shields.io/github/last-commit/datenkollektiv/dockerizor?style=flat)](https://github.com/datenkollektiv/dockerizor/commits/)
+[![Build Status](https://circleci.com/gh/datenkollektiv/dockerizor.svg?style=shield)](https://circleci.com/gh/datenkollektiv/dockerizor)
 
-dockerizor
-==========
+# Eclipse Virgo dockerizor
 
-[Gradle][gradle] plug-in to create a Docker image that includes an [Eclipse Virgo][Virgo] container.
+> Note: This is a fork from [eclipsesource/dockerizor](https://github.com/eclipsesource/dockerizor)
+
+A [Gradle][gradle] plug-in to create a Docker image that includes an [Eclipse Virgo][Virgo] container.
 
 During our preparations for the EclipseCon talk about our first Docker project, we spent quite some time
 packaging Virgo containers inside Docker images.
@@ -12,7 +14,7 @@ We investigated how to improve the continuous delivery of Virgo powered applicat
 
 In a first step we automated the generation of basic Virgo images.
 
-### Using the Gradle Plugin
+### How-To use the Gradle Plugin
 
 The following build snippet applies the [Gradle Plugin Dockerizor][dockerizor] to your build script:
 
@@ -37,7 +39,7 @@ Both the Docker...
 
 ```groovy
 dockerizor {
-  maintainer = 'Florian Waibel <fwaibel@eclipsesource.com>'
+  maintainer = 'Florian Waibel <fwaibel@datenkollektiv.de>'
   description = 'Docker image build with dockerizor'
 
   // docker client configuration
@@ -48,7 +50,7 @@ dockerizor {
 }
 ```
 
-...and Virgo specific configuration is done within the ```dockerizor``` block.
+...and Virgo specific configuration is within a `dockerizor` block.
 
 ```groovy
 dockerizor {

@@ -1,9 +1,11 @@
 ## How-To build dockerizor
 
-We use [Gradle](http://gradle.org/) to build the Gradle Plugin [dockerizor](https://github.com/eclipsesource/dockerizor).
+> Note: This is a fork from [eclipsesource/dockerizor](https://github.com/eclipsesource/dockerizor)
+
+We use [Gradle](http://gradle.org/) to build the Gradle Plugin [dockerizor](https://github.com/datenkollektiv/dockerizor).
 
 ```bash
-$ git clone https://github.com/eclipsesource/dockerizor.git
+$ git clone https://github.com/datenkollektiv/dockerizor.git
 $ cd dockerizor
 $ ./gradlew build
 ```
