@@ -34,7 +34,7 @@ dependencies {
 }
 
 group = 'de.datenkollektiv.dockerizor'
-version = '0.9.2.BUILD-SNAPSHOT'
+version = '0.9.4.BUILD-SNAPSHOT'
 
 // Use java-gradle-plugin to generate plugin descriptors and specify plugin ids
 gradlePlugin {
