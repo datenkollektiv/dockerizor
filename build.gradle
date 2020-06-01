@@ -36,6 +36,11 @@ dependencies {
 group = 'de.datenkollektiv.dockerizor'
 version = '0.9.4.BUILD-SNAPSHOT'
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
 // Use java-gradle-plugin to generate plugin descriptors and specify plugin ids
 gradlePlugin {
     plugins {
