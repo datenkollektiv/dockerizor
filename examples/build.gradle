@@ -8,13 +8,15 @@ buildscript {
 	}
 	dependencies {
         if (System.properties['use.local.dockerizor.snapshot'] == 'true') {
-            classpath 'com.eclipsesource.dockerizor:dockerizor:0.9.2.BUILD-SNAPSHOT'
+            classpath 'de.datenkollektiv.dockerizor:dockerizor:0.9.2.BUILD-SNAPSHOT'
         }
 	}
 }
 
-plugins {
-	id "com.eclipsesource.dockerizor" version "0.9.1"
+if (System.properties['use.local.dockerizor.snapshot'] != 'true') {
+	plugins {
+		id "de.datenkollektiv.dockerizor" version "0.9.2" apply false
+	}
 }
 
 ext.virgoProjects = [project(':jax-rs')]

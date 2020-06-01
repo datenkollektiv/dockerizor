@@ -1,5 +1,5 @@
 apply plugin: 'base'
-apply plugin: 'com.eclipsesource.dockerizor'
+apply plugin: 'de.datenkollektiv.dockerizor'
 
 dockerizor {
     repository = 'dockerizor-example/jax-rs'
