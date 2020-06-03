@@ -26,7 +26,7 @@ buildscript {
     }
   }
   dependencies {
-    classpath "gradle.plugin.de.datenkollektiv.dockerizor:dockerizor:0.9.2"
+    classpath "gradle.plugin.de.datenkollektiv.dockerizor:dockerizor:0.9.4"
   }
 }
 
