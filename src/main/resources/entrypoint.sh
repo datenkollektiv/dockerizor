@@ -11,4 +11,4 @@ fi
 echo "Using hostname ${HOSTNAME} in osgi.console.properties"
 sed -i "s/telnet.host=localhost/telnet.host=${HOSTNAME}/" ${VIRGO_HOME}/repository/ext/osgi.console.properties
 
-${VIRGO_HOME}/bin/startup.sh
+${VIRGO_HOME}/bin/startup.sh $@
